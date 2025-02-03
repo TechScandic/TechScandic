@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechScandic - Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <style>
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .service-card {
+            background: #fff;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card i {
+            font-size: 2.5em;
+            color: #4CAF50;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .service-features li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .service-features li:before {
+            content: "✓";
+            color: #4CAF50;
+            position: absolute;
+            left: 0;
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <script src="js/navigation.js"></script>
+    <script src="js/particles.js"></script>
+</head>
+<body>
+    <header class="page-header">
+        <div class="particles"></div>
+        <h1>Our Services</h1>
+        <p>Comprehensive IT solutions tailored to your business needs</p>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <div class="services-grid">
+                <a href="services/ai-integration.html" class="service-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>AI Integration</h3>
+                    <p>Enhance your business with intelligent automation and data-driven insights. Our AI solutions are designed to improve efficiency while maintaining security.</p>
+                    <span class="read-more">Read More →</span>
+                </a>
+                
+                <a href="services/web-development.html" class="service-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Web Development</h3>
+                    <p>Create modern, responsive websites that provide exceptional user experiences. We focus on clean code and maintainable solutions.</p>
+                    <span class="read-more">Read More →</span>
+                </a>
+                
+                <a href="services/secure-website.html" class="service-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Secure Website</h3>
+                    <p>Build websites with security at their core. We ensure your online presence is protected against modern cyber threats.</p>
+                    <span class="read-more">Read More →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Start Your Project?</h2>
+            <p>Let's discuss how we can help secure your digital future.</p>
+            <a href="contact.html" class="btn">Contact Us</a>
+        </div>
+    </section>
+    <script>
+        // Initialize particles
+        document.addEventListener('DOMContentLoaded', function() {
+            createParticles();
+        });
+    </script>
+</body>
+</html>
