@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Other head elements -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechScandic - Home</title>
@@ -8,6 +10,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/common.css">
     <style>
+        img {
+            max-width: 100%;
+            height: auto;
+        }   
+        /* In styles.css or within <style> in HTML */
+        @media (max-width: 600px) {
+            .navbar {
+                flex-direction: column; /* Stack items vertically */
+            }
+        }
         .hero {
             background: linear-gradient(135deg, #1a1a1a 0%, #363636 100%);
             padding: 10rem 2rem 6rem;
