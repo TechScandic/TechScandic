@@ -8,56 +8,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/enhanced-pages.css">
-    <style>
-        .service-content {
-            padding: 4rem 0;
-        }
-
-        .service-section {
-            background: #fff;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
-        }
-
-        .service-section h2 {
-            color: #4CAF50;
-            margin-bottom: 1.5rem;
-        }
-
-        .service-section p {
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .feature-card {
-            background: #f9f9f9;
-            padding: 1.5rem;
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        .feature-card i {
-            font-size: 2.5em;
-            color: #4CAF50;
-            margin-bottom: 1rem;
-        }
-    </style>
     <script src="../js/navigation.js"></script>
     <script src="../js/particles.js"></script>
 </head>
 <body>
     <nav>
         <div class="nav-container">
-            <a href="../index.html" class="logo">IT Consulting</a>
+            <a href="../index.html" class="logo">
+                <img src="../images/techscandic.png" alt="TechScandic Logo">
+                <span>TechScandic</span>
+            </a>
             <div class="nav-links">
                 <a href="../index.html">Home</a>
                 <a href="../services.html">Services</a>
@@ -139,7 +99,7 @@
             <div class="service-section">
                 <h2 class="section-header">Technologies We Use</h2>
                 <p>We work with modern technologies and frameworks:</p>
-                <ul>
+                <ul class="tech-list">
                     <li>Frontend: React, Vue.js, Angular</li>
                     <li>Backend: Node.js, Python, PHP</li>
                     <li>Databases: MySQL, PostgreSQL, MongoDB</li>

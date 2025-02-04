@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- Other head elements -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechScandic - Home</title>
@@ -13,93 +11,94 @@
         img {
             max-width: 100%;
             height: auto;
-        }   
-        /* In styles.css or within <style> in HTML */
-        @media (max-width: 600px) {
-            .navbar {
-                flex-direction: column; /* Stack items vertically */
-            }
         }
+
         .hero {
             background: linear-gradient(135deg, #1a1a1a 0%, #363636 100%);
-            padding: 10rem 2rem 6rem;
+            padding: clamp(6rem, 15vw, 10rem) 1rem clamp(3rem, 10vw, 6rem);
             text-align: center;
             position: relative;
             overflow: hidden;
         }
 
         .hero h1 {
-            font-size: 3.5em;
+            font-size: clamp(2em, 5vw, 3.5em);
             color: #4CAF50;
-            margin-bottom: 20px;
+            margin-bottom: clamp(15px, 3vw, 20px);
         }
 
         .hero p {
-            font-size: 1.2em;
+            font-size: clamp(1em, 2vw, 1.2em);
             color: #fff;
-            max-width: 800px;
-            margin: 0 auto 30px;
+            max-width: min(800px, 90%);
+            margin: 0 auto clamp(20px, 4vw, 30px);
         }
 
         .features {
-            padding: 4rem 0;
+            padding: clamp(2rem, 5vw, 4rem) 0;
             background: #fff;
         }
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            padding: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+            gap: clamp(1rem, 3vw, 2rem);
+            padding: clamp(1rem, 3vw, 2rem);
         }
 
         .feature-card {
             text-align: center;
-            padding: 2rem;
+            padding: clamp(1.5rem, 4vw, 2rem);
             background: #f9f9f9;
             border-radius: 8px;
             transition: transform 0.3s ease;
         }
 
-        .feature-card:hover {
-            transform: translateY(-5px);
+        @media (hover: hover) {
+            .feature-card:hover {
+                transform: translateY(-5px);
+            }
         }
 
         .feature-card i {
-            font-size: 2.5em;
+            font-size: clamp(2em, 6vw, 2.5em);
             color: #4CAF50;
-            margin-bottom: 1rem;
+            margin-bottom: clamp(0.75rem, 2vw, 1rem);
         }
 
         .feature-card h3 {
             color: #333;
-            margin-bottom: 1rem;
+            margin-bottom: clamp(0.75rem, 2vw, 1rem);
+            font-size: clamp(1.1em, 3vw, 1.3em);
         }
 
         .feature-card p {
             color: #666;
+            font-size: clamp(0.9em, 2vw, 1em);
+            line-height: 1.6;
         }
 
         .cta-section {
             background: #1a1a1a;
             color: #fff;
-            padding: 4rem 0;
+            padding: clamp(2rem, 5vw, 4rem) 1rem;
             text-align: center;
         }
 
         .cta-section h2 {
             color: #4CAF50;
-            margin-bottom: 1.5rem;
+            margin-bottom: clamp(1rem, 3vw, 1.5rem);
+            font-size: clamp(1.5em, 4vw, 2em);
         }
 
         .cta-buttons {
             display: flex;
-            gap: 1rem;
+            gap: clamp(0.5rem, 2vw, 1rem);
             justify-content: center;
-            margin-top: 2rem;
+            margin-top: clamp(1.5rem, 4vw, 2rem);
+            flex-wrap: wrap;
         }
 
-        /* New logo styles */
         .logo {
             display: flex;
             align-items: center;
@@ -107,99 +106,111 @@
         }
 
         .logo img {
-            height: 40px;
+            height: clamp(30px, 8vw, 40px);
             width: auto;
         }
 
-        .hero-logo {
-            max-width: 200px;
-            margin-bottom: 2rem;
+        .logo span {
+            font-size: clamp(1.1em, 3vw, 1.3em);
         }
 
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5em;
+        .hero-logo {
+            max-width: min(200px, 50%);
+            margin-bottom: clamp(1.5rem, 4vw, 2rem);
+        }
+
+        @media (max-width: 480px) {
+            .cta-buttons {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 0 1rem;
             }
 
-            .features-grid {
-                grid-template-columns: 1fr;
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .feature-card {
+                margin: 0 1rem;
             }
         }
     </style>
-    <script src="js/navigation.js"></script>
-    <script src="js/particles.js"></script>
+    <script src="js/navigation.js" defer></script>
+    <script src="js/particles.js" defer></script>
 </head>
 <body>
-<nav>
-    <div class="nav-container">
-        <a href="index.html" class="logo">
-            <img src="images/techscandic.png" alt="TechScandic Logo">
-            <span>TechScandic</span>
-        </a>
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="services.html">Services</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/techscandic.png" alt="TechScandic Logo">
+                <span>TechScandic</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
         </div>
-    </div>
-</nav>
-<section class="hero">
-    <div class="particles"></div>
-    <div class="container">
-        <img src="images/techscandic.png" alt="TechScandic Logo" class="hero-logo">
-        <h1>Transform Your Business with TechScandic</h1>
-        <p>We provide cutting-edge Nordic IT consulting services to help your business thrive in the digital age.</p>
-        <a href="contact.html" class="btn btn-primary" style="position: relative; z-index: 10;">Get Started</a>
-    </div>
-</section>
+    </nav>
 
-<section class="features">
-    <div class="container">
-        <div class="section-title">
-            <h2>Why Choose TechScandic</h2>
-            <p>We deliver exceptional IT solutions tailored to your business needs</p>
+    <section class="hero">
+        <div class="particles"></div>
+        <div class="container">
+            <img src="images/techscandic.png" alt="TechScandic Logo" class="hero-logo">
+            <h1>Transform Your Business with TechScandic</h1>
+            <p>We provide cutting-edge Nordic web development services to help your business thrive in the digital age.</p>
+            <a href="contact.html" class="btn btn-primary" style="position: relative; z-index: 10;">Get Started</a>
         </div>
-        <div class="features-grid">
-            <div class="feature-card">
-                <i class="fas fa-laptop-code"></i>
-                <h3>Expert Consulting</h3>
-                <p>Get guidance from our experienced IT consultants to optimize your business processes.</p>
-            </div>
-            <div class="feature-card">
-                <i class="fas fa-shield-alt"></i>
-                <h3>Security First</h3>
-                <p>Protect your business with our comprehensive cybersecurity solutions.</p>
-            </div>
-            <div class="feature-card">
-                <i class="fas fa-cloud"></i>
-                <h3>Cloud Solutions</h3>
-                <p>Leverage the power of cloud computing to scale your business efficiently.</p>
-            </div>
-            <div class="feature-card">
-                <i class="fas fa-chart-line"></i>
-                <h3>Digital Growth</h3>
-                <p>Accelerate your business growth with our digital transformation strategies.</p>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
-<section class="cta-section">
-    <div class="container">
-        <h2>Ready to Transform Your Business?</h2>
-        <p>Let's discuss how we can help you achieve your business goals</p>
-        <div class="cta-buttons">
-            <a href="services.html" class="btn">Our Services</a>
-            <a href="contact.html" class="btn">Contact Us</a>
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose TechScandic</h2>
+                <p>We deliver exceptional IT solutions tailored to your business needs</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Expert Consulting</h3>
+                    <p>Get guidance from our experienced IT consultants to optimize your business processes.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Security First</h3>
+                    <p>Protect your business with our comprehensive cybersecurity solutions.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-cloud"></i>
+                    <h3>Cloud Solutions</h3>
+                    <p>Leverage the power of cloud computing to scale your business efficiently.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Digital Growth</h3>
+                    <p>Accelerate your business growth with our digital transformation strategies.</p>
+                </div>
+            </div>
         </div>
-    </div>
-</section>
-<script>
-    // Initialize particles
-    document.addEventListener('DOMContentLoaded', function() {
-        createParticles();
-    });
-</script>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Transform Your Business?</h2>
+            <p>Let's discuss how we can help you achieve your business goals</p>
+            <div class="cta-buttons">
+                <a href="services.html" class="btn">Our Services</a>
+                <a href="contact.html" class="btn">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            createParticles();
+        });
+    </script>
 </body>
 </html>
