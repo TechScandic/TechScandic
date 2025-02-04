@@ -1,22 +1,17 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const hamburger = document.createElement('div');
+    const hamburger = document.createElement('button');
     hamburger.className = 'hamburger';
-    hamburger.innerHTML = `
-        <span></span>
-        <span></span>
-        <span></span>
-    `;
-
-    const navContainer = document.querySelector('.nav-container');
+    hamburger.innerHTML = '<span></span><span></span><span></span>';
+    
     const navLinks = document.querySelector('.nav-links');
+    const navContainer = document.querySelector('.nav-container');
     
     // Insert hamburger before nav-links
     navContainer.insertBefore(hamburger, navLinks);
 
     hamburger.addEventListener('click', function() {
-        hamburger.classList.toggle('active');
         navLinks.classList.toggle('active');
-        document.body.classList.toggle('menu-open');
+        hamburger.classList.toggle('active');
     });
 
     // Close menu when clicking outside
@@ -24,18 +19,16 @@ document.addEventListener('DOMContentLoaded', function() {
         const isClickInside = navContainer.contains(event.target);
         
         if (!isClickInside && navLinks.classList.contains('active')) {
-            hamburger.classList.remove('active');
             navLinks.classList.remove('active');
-            document.body.classList.remove('menu-open');
+            hamburger.classList.remove('active');
         }
     });
 
     // Close menu when clicking a link
     navLinks.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
             navLinks.classList.remove('active');
-            document.body.classList.remove('menu-open');
+            hamburger.classList.remove('active');
         });
     });
 });
